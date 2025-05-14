@@ -45,6 +45,70 @@ body {
     color: #ffffff;
   }
   
+  .nav-toggle {
+    background-color: #10182F;
+    color: #C7AE6A;
+    display: none;
+    font-size: 1.0rem;
+    border: none;
+    cursor: pointer;
+  }
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #10182F;
+        padding: 0 1rem;
+    }
+
+
+.nav-links.active {
+    max-height: 300px;
+    padding: 1rem;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0.5rem 0;
+  }
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+  }
+  
+  .nav-search {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    outline: none;
+    width: 200px;
+    max-width: 80vw;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-right {
+      display: flex;
+    }
+  }
+  
+
   .nav-links {
     list-style: none;
     display: flex;
