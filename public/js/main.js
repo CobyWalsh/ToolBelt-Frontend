@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 let scene, camera, renderer, beltGroup;
+let raycaster, mouse;
 
 function init() {
     // set up scene
@@ -44,10 +45,46 @@ function init() {
     beltGroup = new THREE.Group();
     scene.add(beltGroup);
 
+    // Raycaster and mouse setup
+    raycaster = new THREE.Raycaster();
+    mouse = new THREE.Vector2();
+
+    window.addEventListener('click', onMouseClick, false);
+
     // Add sample pockets
     createPocketRing(['window', 'tree', 'faucet']);
 
     animate();
+}
+
+function onMouseClick(event) {
+    // Normalize mouse coordinates
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 +1;
+
+    raycaster.setFromCamera(mouse, camera);
+
+    const intersects = raycaster.intersectObjects(beltGroup.children, true);
+
+    if (intersects.length > 0) {
+        const clickedObject = intersects[0].object;
+        
+        // Traverse upward to find top-level group
+        let parent = clickedObject;
+        while (parent.parent && parent.parent != beltGroup) {
+            parent = parent.parent
+        }
+
+        const index = beltGroup.children.indexOf(parent);
+
+        const services = ['window', 'tree', 'faucet'];
+        const clickedService = services[index];
+
+        if (clickedService) {
+            console.log(`Clicked on: ${clickedService}`);
+            window.location.href = `/services/${clickedService}.html`; 
+        }
+    }
 }
 
 function createPocketItem(services) {
