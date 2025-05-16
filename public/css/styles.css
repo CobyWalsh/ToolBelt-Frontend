@@ -83,7 +83,7 @@ body {
 .nav-right {
     display: flex;
     align-items: center;
-    padding-right: 20px;
+    padding-right: 60px;
   }
   
   .nav-search {
@@ -168,8 +168,6 @@ body {
   #carousel-container {
     width: 100%;
     height: 100vh;
-    background-color: black;
-    border: 3px solid red;
     position: relative;
     z-index: 0;
   }
