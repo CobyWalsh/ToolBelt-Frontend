@@ -131,6 +131,7 @@ body {
   
 
   .site-header {
+    margin-top: 100px;
     padding: 60px 20px;
     background-color: #fff;
     border-bottom: 2px solid #eee;

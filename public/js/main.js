@@ -10,8 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+let isDragging = false;
+let previousMouseX = 0;
 let scene, camera, renderer, beltGroup;
 let raycaster, mouse;
+
+const leatherTexture = new THREE.TextureLoader().load('images/leather.png'); // Add this image to assets
+leatherTexture.wrapS = leatherTexture.wrapT = THREE.RepeatWrapping;
+leatherTexture.repeat.set(2, 1); // Adjust repeat for grain
 
 function init() {
     // set up scene
@@ -41,9 +47,15 @@ function init() {
     const light = new THREE.AmbientLight(0xffffff, 1);
     scene.add(light);
 
+    // Directional light
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    directionalLight.position.set(5, 5, 5);
+    scene.add(directionalLight);
+
     // Create a group for the toolbelt pockets
     beltGroup = new THREE.Group();
     scene.add(beltGroup);
+    createToolBeltBase();
 
     // Raycaster and mouse setup
     raycaster = new THREE.Raycaster();
@@ -52,15 +64,35 @@ function init() {
     window.addEventListener('click', onMouseClick, false);
 
     // Add sample pockets
-    createPocketRing(['window', 'tree', 'faucet']);
+    createPocketRing(['window', 'tree', 'plumbing']);
 
     animate();
 }
 
+// Mouse down = start dragging
+window.addEventListener('mousedown', (event) => {
+    isDragging = true;
+    previousMouseX = event.clientX;
+});
+
+// Mouse up = stop dragging
+window.addEventListener('mouseup', () => {
+    isDragging = false;
+});
+
+// Mouse move = rotate if dragging
+window.addEventListener('mousemove', (event) => {
+    if(isDragging) {
+        const deltaX = event.clientX - previousMouseX;
+        previousMouseX = event.clientX;
+        beltGroup.rotation.y += deltaX * 0.005; // Adjust sensitivity here
+    }
+});
+
 function onMouseClick(event) {
     // Normalize mouse coordinates
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 +1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1; 
 
     raycaster.setFromCamera(mouse, camera);
 
@@ -77,14 +109,31 @@ function onMouseClick(event) {
 
         const index = beltGroup.children.indexOf(parent);
 
-        const services = ['window', 'tree', 'faucet'];
+        const services = ['window', 'tree', 'plumbing'];
         const clickedService = services[index];
 
         if (clickedService) {
             console.log(`Clicked on: ${clickedService}`);
-            window.location.href = `/services/${clickedService}.html`; 
+            // May have to remove later for deployment
+            window.location.href = `/public/services/${clickedService}.html`; 
         }
     }
+}
+
+function createToolBeltBase() {
+    const beltGeometry = new THREE.TorusGeometry(3, 0.2, 16, 100); // Radius 3 matches your ring
+
+    const beltMaterial = new THREE.MeshStandardMaterial({
+        map: leatherTexture,
+        roughness: 0.9, // Worn look
+        metalness: 0.1,
+    });
+
+    const belt = new THREE.Mesh(beltGeometry, beltMaterial);
+    belt.rotation.x = Math.PI / 2;
+    belt.position.y = -0.5; // Drop slightly to appear behind items
+
+    beltGroup.add(belt);
 }
 
 function createPocketItem(services) {
@@ -127,7 +176,7 @@ function createPocketItem(services) {
                 group.add(leaves);
                 break;
 
-                case 'faucet':
+                case 'plumbing':
                     // Vertical pipe
                     const basePipe = new THREE.Mesh(
                         new THREE.CylinderGeometry(0.1, 0.1, 0.6, 16),
@@ -154,6 +203,7 @@ function createPocketItem(services) {
                     group.add(basePipe);
                     group.add(spout);
                     group.add(handle);
+                    group.scale.set(2, 2, 2);
                     break;
     }
 
@@ -166,21 +216,29 @@ function createPocketRing(services) {
 
     for (let i = 0; i < services.length; i++) {
         const angle = (i / services.length) * Math.PI * 2;
-        const pocket = createPocketItem(services[i]);
+        const pocketGeometry = new THREE.BoxGeometry(1.2, 1, 0.5);
+        const pocketMaterial = new THREE.MeshStandardMaterial({ map: leatherTexture });
+        const pocket = new THREE.Mesh(pocketGeometry, pocketMaterial);
+        const pocketServices = createPocketItem(services[i]);
+
+        // Same position as item
+        pocket.position.copy(pocketServices.position);
+        pocket.position.y = -0.6; // Slightly below each item
 
         // Position in circular ring
-        pocket.position.x = Math.cos(angle) * radius;
-        pocket.position.z = Math.sin(angle) * radius;
-        pocket.lookAt(new THREE.Vector3(0, 0, 0));
+        pocketServices.position.x = Math.cos(angle) * radius;
+        pocketServices.position.z = Math.sin(angle) * radius;
+        pocketServices.lookAt(new THREE.Vector3(0, 0, 0));
 
         beltGroup.add(pocket);
+        beltGroup.add(pocketServices);
     }
 }
 
 // Animate the scene
 function animate() {
     requestAnimationFrame(animate);
-    beltGroup.rotation.y += 0.003; // slow rotation
+   
     renderer.render(scene, camera);
 }
 
