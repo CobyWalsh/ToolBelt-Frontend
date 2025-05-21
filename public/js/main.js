@@ -121,20 +121,35 @@ function onMouseClick(event) {
 }
 
 function createToolBeltBase() {
-    const beltGeometry = new THREE.TorusGeometry(3, 0.2, 16, 100); // Radius 3 matches your ring
+    const beltRadius = 3;
+    const beltWidth = 0.3;
+    const beltHeight = 0.1;
+    const segments = 32; // more segments = smoother belt
 
-    const beltMaterial = new THREE.MeshStandardMaterial({
-        map: leatherTexture,
-        roughness: 0.9, // Worn look
-        metalness: 0.1,
-    });
+    for (let i = 0; i < segments; i++) {
+        const angle = (i / segments) * Math.PI * 2;
 
-    const belt = new THREE.Mesh(beltGeometry, beltMaterial);
-    belt.rotation.x = Math.PI / 2;
-    belt.position.y = -0.5; // Drop slightly to appear behind items
+        // Create a flat segment (like a belt tile)
+        const geometry = new THREE.BoxGeometry(beltWidth, beltHeight, 0.05);
+        const material = new THREE.MeshStandardMaterial({
+            map: leatherTexture,
+            roughness: 0.9,
+            metalness: 0.1
+        });
 
-    beltGroup.add(belt);
-}
+        const segment = new THREE.Mesh(geometry, material);
+
+        // Position segment in a circular arc
+        segment.position.x = Math.cos(angle) * beltRadius;
+        segment.position.z = Math.sin(angle) * beltRadius;
+        segment.position.y = -0.7; // Lower to sit under pockets
+        
+        // Rotate each segment to face outward
+        segment.lookAt(new THREE.Vector3(0, -0.7, 0));
+
+        beltGroup.add(segment);
+    }
+}  
 
 function createPocketItem(services) {
     const group = new THREE.Group();
