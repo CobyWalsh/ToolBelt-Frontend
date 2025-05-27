@@ -22,10 +22,6 @@ leatherTexture.repeat.set(2, 1); // Adjust repeat for grain
 function init() {
     // set up scene
     scene = new THREE.Scene();
-    const testGeo = new THREE.BoxGeometry(1, 1, 1);
-    const testMat = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-    const testCube = new THREE.Mesh(testGeo, testMat);
-    scene.add(testCube);
 
     // set up camera
     const fov = 75;
