@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -27,7 +27,7 @@ body {
   }
   
   .nav-logo {
-    width: 80px;
+    width: 100px;
     height: auto;
     padding-left: 20px;
     padding-right: 20px;
@@ -114,6 +114,7 @@ body {
   .nav-links a {
     color: white;
     text-decoration: none;
+    font-size: 17px;
     font-weight: 500;
     transition: color 0.3s ease;
   }
@@ -132,14 +133,15 @@ body {
 
   .site-header {
     margin-top: 100px;
-    padding: 2rem;
-    background: linear-gradient(to right, #f5f3f0, #e8e4df);
-    border-bottom: 2px solid #ccc;
+    padding: 4rem 2rem 14rem;
+    background: linear-gradient(to right,#e8e4df, #d6cdc4);
+    border-bottom: none;
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;    
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   }
 
   .logo {
@@ -190,6 +192,22 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     flex-wrap: wrap;
+}
+
+.wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+.button-container {
+        position: absolute;
+        bottom: 1rem; /* Adjust to fit nicely above the wave */
+        right: 1rem;
+        z-index: 1;
 }
 
 .header-button {
