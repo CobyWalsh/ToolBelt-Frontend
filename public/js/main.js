@@ -10,6 +10,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Scroll triggered animation
+const sections = document.querySelectorAll('.signup-container');
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const isAlt = entry.target.parentElement.classList.contains('alt');
+            entry.target.classList.add(isAlt ? 'slide-in-right' : 'slide-in-left');        }
+    });
+}, {
+    threshold: 0.1
+});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
 // let isDragging = false;
 // let previousMouseX = 0;
 // let scene, camera, renderer, beltGroup;
