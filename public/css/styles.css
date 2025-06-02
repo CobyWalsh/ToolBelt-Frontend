@@ -240,8 +240,25 @@ body {
   flex-wrap: wrap;
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeInUp 1s ease forwards;
+  transition: all 0.8s ease forwards;
   animation-delay: 0.3s;
+}
+
+.slide-in-left {
+  transform: translateX(-50px);
+  opacity: 1;
+  transition: all 0.8s ease forwards;
+}
+
+.slide-in-right {
+  transform: translateX(50px);
+  opacity: 1;
+  transition: all 0.8s ease forwards;
+}
+
+.signup-container.animate {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .signup-image {
@@ -257,15 +274,9 @@ body {
 }
 
 .signup-text h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #0A2342;
   margin-bottom: 1rem;
-}
-
-.signup-text p {
-  font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 1.5rem;
 }
 
 @keyframes fadeInUp {
