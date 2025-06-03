@@ -1,4 +1,4 @@
-import * as THREE from './lib/three.module.js';
+// import * as THREE from './lib/three.module.js';
 console.log("main.js is running");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,23 +8,26 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.addEventListener("click", () => {
         links.classList.toggle("active");
     });
-});
 
-// Scroll triggered animation
+    // Scroll triggered animation
 const sections = document.querySelectorAll('.signup-container');
 
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
+        console.log('Observed:', entry.target, 'IsIntersecting:', entry.isIntersecting);
         if (entry.isIntersecting) {
-            const isAlt = entry.target.parentElement.classList.contains('alt');
-            entry.target.classList.add(isAlt ? 'slide-in-right' : 'slide-in-left');        }
+            const direction = entry.target.getAttribute('data-direction');
+            entry.target.classList.add(direction === 'right' ? 'slide-in-right' : 'slide-in-left');        }
     });
 }, {
     threshold: 0.1
 });
 
 sections.forEach(section => {
+    const isAlt = section.parentElement.classList.contains('alt');
+    section.setAttribute('data-direction', isAlt ? 'right' : 'left');
     observer.observe(section);
+   });
 });
 
 // let isDragging = false;
