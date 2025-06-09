@@ -106,6 +106,11 @@ body {
     width: 200px;
     max-width: 80vw;
   }
+
+  .plan-card {
+    flex: 1 1 100%;
+    max-width: 500px;
+  }
   
   @media (max-width: 768px) {
     .nav-search{
@@ -549,6 +554,77 @@ body {
   margin-top: 4rem;
 }
 
+/* Subscription Page */
+.plans-section {
+  padding: 4rem;
+  background-color: #f9f9f9;
+}
+
+.plans-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.plan-card {
+  flex: 1 1 45%;
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease;
+  border: 2px solid #C7AE6A;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-title {
+  font-size: 1.6rem;
+  color: #0A2342;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #C7AE6A;
+  padding-bottom: 0.5rem;
+}
+
+.plan-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plan-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  font-size: 1rem;
+}
+
+.basic-plan {
+  /* order: 1; */
+  background: rgba(255, 250, 230, 0.6);
+}
+
+.full-plan {
+  /* order: 2; */
+  background: rgba(236, 217, 176, 0.4);
+}
+
+@media (max-width: 768px) {
+  .plans-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan-card {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+}
   /* #carousel-container {
     width: 100%;
     height: 100vh;
