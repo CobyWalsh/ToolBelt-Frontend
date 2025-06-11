@@ -609,11 +609,6 @@ body {
   background: rgba(255, 250, 230, 0.6);
 }
 
-.full-plan {
-  /* order: 2; */
-  background: rgba(236, 217, 176, 0.4);
-}
-
 @media (max-width: 768px) {
   .plans-container {
     flex-direction: column;
@@ -623,6 +618,97 @@ body {
   .plan-card {
     flex: 1 1 100%;
     max-width: 90%;
+  }
+}
+
+.join-button {
+  margin-top: 1.5rem;
+  background-color: #5a4a3f;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  max-width: 140px;
+  align-self: center;
+}
+
+.join-button:hover {
+  background-color: #3d322a;
+  transform: translateY(-2px);
+}
+
+.frequency-card {
+  max-width: 17rem;
+  display: none;
+  margin-top: 2rem;
+  margin-left: 3rem;
+  padding: 2rem;
+  background-color: #fffaf0;
+  border: 2px solid #C7AE6A;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translate(30px, 30px);
+  transition: all 0.5s ease;
+}
+
+.frequency-title {
+  font-size: 1.4rem;
+  color: #0A2342;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #C7AE6A;
+  padding-bottom: 0.4rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.frequency-card.show {
+  display: block;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.frequency-options {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.frequency-button {
+  padding: 0.5rem 1rem;
+  background-color: #C7AE6A;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.frequency-button:hover {
+  background-color: #a58f5a;
+}
+
+.frequency-description {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  max-width: 500px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(20px, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
   }
 }
   /* #carousel-container {

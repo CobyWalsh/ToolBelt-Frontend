@@ -45,43 +45,51 @@
 <section class="plans-section">
   <div class="plans-container">
     <div class="plan-card basic-plan">
-      <h2 class="plan-title">Basic Plan</h2>
+      <h2 class="plan-title">Home Watch</h2>
       <ul class="plan-list">
-        <li>HVAC Filter Replacement</li>
-        <li>Water Treatment Filter Replacement</li>
-        <li>Dishwasher Cleaning & Maintenance</li>
-        <li>Oven Cleaning</li>
-        <li>Window Cleaning</li>
-        <li>Dryer Vents</li>
-        <li>Chimney Sweeping</li>
-        <li>Bathroom Fan Vents</li>
-        <li>Insect Spraying</li>
-        <li>Battery Replacement (Fire Alarms, Smart Locks, Light Bulbs)</li>
-        <li>Hood Range Filters</li>
-        <li>Garage Door Maintenance / Inspection</li>
-        <li>Water Softener Salt Levels</li>
-        <li>Basic Inspection</li>
+        <p>
+          Whether you’re heading south for the winter, managing a vacation home, or away for a few weeks on assignment, ToolBelt’s Basic Plan offers peace of mind while you’re gone. Our expert team handles essential home maintenance tasks like HVAC and water filter replacements, insect spraying, and routine inspections to ensure everything runs smoothly in your absence. Whether it’s a long-term deployment, seasonal travel, or a last-minute weekend getaway, you’ll never have to wonder if you left the door unlocked or if your systems are overdue for attention. With ToolBelt, your home stays safe, maintained, and ready for your return — no stress, no surprises. Build your customizable plan and get started today!
+        </p>
       </ul>
+      <div class="button-right">
+      <button class="join-button" id="build-plan-button">Build Plan</button>
+     </div>
     </div>
+  </div>
 
-    <div class="plan-card full-plan">
-      <h2 class="plan-title">Full Package Plan</h2>
-      <ul class="plan-list">
-        <li>Everything in Basic Plan</li>
-        <li>HVAC Tune-Up</li>
-        <li>Drain Water Heater</li>
-        <li>Clean Gutters</li>
-        <li>Pool Maintenance</li>
-        <li>Tree Trimming / Removal</li>
-        <li>Pressure Washing</li>
-        <li>BBQ Grill Cleaning</li>
-        <li>Landscaping</li>
-        <li>Snow Removal</li>
-        <li>Sump Pump Inspection</li>
-        <li>Plumbing Leaks / Corrosion</li>
-        <li>Carpet Cleaning</li>
-      </ul>
+  <div class="frequency-card hidden" id="frequency-options">
+    <h3 class="frequency-title">Select Frequency</h3>
+    <p class="frequency-description">
+      How often would you like us to check in on your home? Choose the visit frequency that best fits your lifestyle — whether you’re away for the season or just like knowing things are taken care of regularly. Select an option below to keep your home safe, sound, and in good shape.
+    </p>    
+    <div class="frequency-options">
+      <button class="frequency-button">Weekly</button>
+      <button class="frequency-button">Bi-Weekly</button>
+      <button class="frequency-button">Monthly</button>
     </div>
+  </div>
+
+  <div class="task-card hidden" id="task-options">
+    <h3 class="plan-title">What home maintenance items can we take off your plate?</h3>
+    <form class="task-form">
+      <div class="task-columns">
+        <div class="task-column">
+          <label><input type="checkbox" name="tasks" value="HVAC Filter Replacement"> HVAC Filter Replacement</label>
+          <label><input type="checkbox" name="tasks" value="Water Softener Refill"> Water Softener Refill</label>
+          <label><input type="checkbox" name="tasks" value="Insect Spraying"> Insect Spraying</label>
+          <label><input type="checkbox" name="tasks" value="Smoke Detector Testing"> Smoke Detector Testing</label>
+          <label><input type="checkbox" name="tasks" value="Change Water Filter"> Change Water Filters</label>
+        </div>
+        <div class="task-column">
+          <label><input type="checkbox" name="tasks" value="Basic Home Inspection"> Basic Home Inspection</label>
+          <label><input type="checkbox" name="tasks" value="Window Check & Latch"> Window Check & Latch</label>
+          <label><input type="checkbox" name="tasks" value="Garage Door Safety Check"> Garage Door Safety Check</label>
+          <label><input type="checkbox" name="tasks" value="Drainage Observation"> Drainage Observation</label>
+          <label><input type="checkbox" name="tasks" value="Thermostat Calibraion"> Thermostat Calibraion</label>
+        </div>
+      </div>
+      <button class="join-button" type="submit">Select Items</button>
+    </form>
   </div>
 </section>
 
@@ -117,5 +125,7 @@
           <p>&copy; 2025 ToolBelt. All rights reserved.</p>
         </div>
       </footer>
+
+      <script type="module" src="js/main.js"></script> 
 </body>
 </html>
