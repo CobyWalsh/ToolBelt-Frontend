@@ -9,6 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
         links.classList.toggle("active");
     });
 
+    const buildPlanButton = document.getElementById("build-plan-button");
+    const frequencyBox = document.getElementById("frequency-options");
+
+    if (buildPlanButton && frequencyBox) {
+        buildPlanButton.addEventListener("click", () => {
+        frequencyBox.classList.remove("hidden");    
+        frequencyBox.classList.add("show");
+      });
+    }  
+
     // Scroll triggered animation
 const sections = document.querySelectorAll('.signup-container');
 
