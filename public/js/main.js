@@ -19,6 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }  
 
+    const taskBox = document.getElementById("task-options");
+    const frequencyButtons = document.querySelectorAll(".frequency-button");
+
+    frequencyButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            if (taskBox) {
+                taskBox.classList.remove("hidden");
+                taskBox.classList.add("show");
+            }
+        });
+    });
+
     // Scroll triggered animation
 const sections = document.querySelectorAll('.signup-container');
 
