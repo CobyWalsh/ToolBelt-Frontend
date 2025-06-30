@@ -31,6 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    const selectItemsButton = document.querySelector(".task-form button[type='submit']");
+    const homeInfoCard = document.getElementById("home-info-card");
+
+    if (selectItemsButton && homeInfoCard) {
+        selectItemsButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            homeInfoCard.classList.remove("hidden");
+            homeInfoCard.classList.add("show")
+        });
+    }
+
     // Scroll triggered animation
 const sections = document.querySelectorAll('.signup-container');
 
