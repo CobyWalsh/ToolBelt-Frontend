@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="images/ToolBeltColor.png" alt="ToolBelt Logo" class="nav-logo" />
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="subscription.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <input type="text" class="nav-search" placeholder="Search" />
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">
+                <svg class="nav-icon" viewBox="0 0 100 80" width="30" height="30" fill="#C7AE6A">
+                    <rect width="100" height="10" rx="5"></rect>
+                    <rect y="30" width="100" height="10" rx="5"></rect>
+                    <rect y="60" width="100" height="10" rx="5"></rect>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="contact-main">
+      <h1 class="site-title">Get in Touch</h1>
+
+      <form class="contact-form">
+        <div class="contact-row">
+            <input type="text" placeholder="First Name" name="firstName" required>
+            <input type="text" placeholder="Last Name" name="lastName" required>
+        </div>
+        <div class="contact-row">
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="tel" placeholder="Phone Number" name="phone" required>
+        </div>
+        <div class="contact-row">
+            <input type="text" placeholder="City" name="city" required>
+            <input type="text" placeholder="Address" name="address" required>
+        </div>
+        <textarea name="message" placeholder="Message" rows="5"></textarea>
+        <button class="join-button" type="submit">Submit</button>
+      </form>
+
+      <div class="contact-info">
+        <p><strong>Phone:</strong></p>
+        <p><strong>Dexter Belling:</strong>(509)481-8978</p>
+        <p><strong>Coby Walsh:</strong>(509)389-7222</p>
+        <p><strong>Email:</strong>bolo@mybolohome.com</p>
+        <p><strong>Business Hours:</strong>Mon-Sun, 8am-5pm</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-brand">
+            <img src="images/ToolBeltColor.png" alt="ToolBelt Logo" class="footer-logo" />
+            <p class="footer-description">
+              Reliable home maintenance, simplified. ToolBelt delivers consistent, professional service so your home stays in top shape — no hassle required.
+            </p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#">Our Pros</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Support</h4>
+              <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Bolo Home. All rights reserved.</p>
+        </div>
+      </footer>
+    
+      <script type="module" src="js/main.js"></script>
+</body>
+</html>
