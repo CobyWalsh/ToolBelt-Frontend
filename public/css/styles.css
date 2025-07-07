@@ -2,7 +2,7 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: #FDF8F1;
     color: #333;
   }
 
@@ -243,14 +243,14 @@ body {
 }
 
 .signup {
-  background-color: white;
+  background-color: #FDF8F1;
   padding: 4rem 2rem;
   display: flex;
   justify-content: center;
 }
 
 .signup-alt {
-  background-color: white;
+  background-color: #FDF8F1;
 }
 
 .signup-container {
@@ -308,7 +308,7 @@ body {
 }
 
 .signup-image {
-  max-width: 500px;
+  max-width: 550px;
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -558,7 +558,7 @@ body {
 /* Subscription Page */
 .plans-section {
   padding: 4rem;
-  background-color: #f9f9f9;
+  background-color: #FDF8F1;
 }
 
 .plans-container {
@@ -845,6 +845,7 @@ justify-content: space-between;
 padding: 3rem;
 padding-top: 10rem;
 flex-wrap: wrap;
+background-color: #FDF8F1;
 }
 
 .about-text {
