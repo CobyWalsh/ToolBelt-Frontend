@@ -31,6 +31,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+<<<<<<< HEAD
+=======
+    const selectItemsButton = document.querySelector(".task-form button[type='submit']");
+    const homeInfoCard = document.getElementById("home-info-card");
+
+    if (selectItemsButton && homeInfoCard) {
+        selectItemsButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            homeInfoCard.classList.remove("hidden");
+            homeInfoCard.classList.add("show")
+        });
+    }
+
+>>>>>>> 717eb8d1e3c8aeb520c0b232af539f6a278111c2
     // Scroll triggered animation
 const sections = document.querySelectorAll('.signup-container');
 
