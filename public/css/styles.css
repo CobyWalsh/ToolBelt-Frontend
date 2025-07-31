@@ -2,20 +2,12 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
-<<<<<<< HEAD
-    background-color: white;
-=======
     background-color: #FDF8F1;
->>>>>>> 717eb8d1e3c8aeb520c0b232af539f6a278111c2
     color: #333;
   }
 
   /* --- Navbar Styles --- */
-<<<<<<< HEAD
-.navbar {
-=======
   .navbar {
->>>>>>> 717eb8d1e3c8aeb520c0b232af539f6a278111c2
     width: 100vw;
     background-color: #10182F;
     display: flex;
@@ -28,10 +20,7 @@ body {
     color: white;
   }
   
-<<<<<<< HEAD
-=======
   
->>>>>>> 717eb8d1e3c8aeb520c0b232af539f6a278111c2
   .nav-left {
     display: flex;
     align-items: center;
@@ -165,11 +154,7 @@ body {
     background: linear-gradient(to right, #a8b5a0, #cbe3ca);
     border-bottom: none;
     position: relative;
-<<<<<<< HEAD
-    overflow: hidden;
-=======
     overflow: visible;
->>>>>>> 717eb8d1e3c8aeb520c0b232af539f6a278111c2
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -258,22 +243,14 @@ body {
 }
 
 .signup {
-<<<<<<< HEAD
-  background-color: white;
-=======
   background-color: #FDF8F1;
->>>>>>> 717eb8d1e3c8aeb520c0b232af539f6a278111c2
   padding: 4rem 2rem;
   display: flex;
   justify-content: center;
 }
 
 .signup-alt {
-<<<<<<< HEAD
-  background-color: white;
-=======
   background-color: #FDF8F1;
->>>>>>> 717eb8d1e3c8aeb520c0b232af539f6a278111c2
 }
 
 .signup-container {
@@ -331,11 +308,7 @@ body {
 }
 
 .signup-image {
-<<<<<<< HEAD
-  max-width: 500px;
-=======
   max-width: 550px;
->>>>>>> 717eb8d1e3c8aeb520c0b232af539f6a278111c2
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -585,11 +558,7 @@ body {
 /* Subscription Page */
 .plans-section {
   padding: 4rem;
-<<<<<<< HEAD
-  background-color: #f9f9f9;
-=======
   background-color: #FDF8F1;
->>>>>>> 717eb8d1e3c8aeb520c0b232af539f6a278111c2
 }
 
 .plans-container {
@@ -817,8 +786,6 @@ body {
   max-width: 160px;
   margin-top: 1rem;
 }
-<<<<<<< HEAD
-=======
 
 .home-info-card {
   display: none;
@@ -984,7 +951,6 @@ main {
     flex-direction: column;
   }
 }
->>>>>>> 717eb8d1e3c8aeb520c0b232af539f6a278111c2
   /* #carousel-container {
     width: 100%;
     height: 100vh;
