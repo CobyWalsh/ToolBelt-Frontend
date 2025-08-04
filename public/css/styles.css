@@ -951,6 +951,11 @@ main {
     flex-direction: column;
   }
 }
+
+.frequency-button.selcted {
+  background-color: #C7AE6A;
+  color: white;
+}
   /* #carousel-container {
     width: 100%;
     height: 100vh;

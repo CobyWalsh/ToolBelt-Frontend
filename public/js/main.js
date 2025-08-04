@@ -61,7 +61,95 @@ sections.forEach(section => {
     section.setAttribute('data-direction', isAlt ? 'right' : 'left');
     observer.observe(section);
    });
+
+   const contactForm = document.querySelector(".contact-form");
+
+   if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = {
+            firstName: contactForm.querySelector("[name='firstName']").value,
+            lastName: contactForm.querySelector("[name='lastName']").value,
+            email: contactForm.querySelector("[name='email']").value,
+            phone: contactForm.querySelector("[name='phone']").value,
+            city: contactForm.querySelector("[name='city']").value,
+            address: contactForm.querySelector("[name='address']").value,
+            message: contactForm.querySelector("[name='message']").value,
+        };
+
+        try {
+            const res = await fetch("https://bolo-backend-1.onrender.com/contact", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(formData)
+            });
+
+            const result = await res.json();
+            if (result.success) {
+                alert("Your message was sent!");
+                contactForm.reset();
+            } else {
+                alert("Sorry, there was an error sending you message");
+            }
+        } catch (err) {
+            console.errro("Error submitting contact form:", err);
+            alert("Network or server error. Please try again");
+        }
+    });
+   }
+
+const subscriptionForm = document.querySelector(".home-info-form");
+
+if (subscriptionForm) {
+    subscriptionForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const tasks = Array.from(
+            document.querySelectorAll("input[name='tasks']:checked")
+          ).map((cb) => cb.value);
+      
+          const frequency = document.querySelector(".frequency-button.selected")?.textContent || "Unknown";
+      
+          const formData = {
+            homeType: subscriptionForm.querySelector("input[name='home-type']:checked")?.value || "",
+            sqft: subscriptionForm.querySelector("input[name='sqft']")?.value || "",
+            address: subscriptionForm.querySelector("input[name='address']")?.value || "",
+            frequency,
+            tasks,
+          };
+
+   try {
+    const res = await fetch("https://bolo-backend-1.onrender.com/api/subscription", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+    });
+
+    const result = await res.json();
+    if (result.success) {
+        alert("Subscription submitted successfully!");
+        subscriptionForm.reset();
+    } else {
+        alert("Sorry, there was a problem submitting your subscription.");
+    }
+   } catch (err) {
+    console.error("Error submitting contact form:", err);
+    alert("Failed to send subscription. Please try again");
+     }
+   })
+  }
+
+  const frequencyButton = document.querySelectorAll(".frequency-button");
+
+  frequencyButton.forEach(button => {
+    button.addEventListener("click", () => {
+        frequencyButton.forEach(btn => classList.remove("selected"));
+        button.classList.add("selected");
+    });
+  });
 });
+
 
 // let isDragging = false;
 // let previousMouseX = 0;
