@@ -93,7 +93,7 @@ sections.forEach(section => {
                 alert("Sorry, there was an error sending you message");
             }
         } catch (err) {
-            console.errro("Error submitting contact form:", err);
+            console.error("Error submitting contact form:", err);
             alert("Network or server error. Please try again");
         }
     });
@@ -140,7 +140,6 @@ if (subscriptionForm) {
    })
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
     const handymanForm = document.getElementById('handymanForm');
     const formMessage = document.getElementById('formMessage');
     
@@ -178,13 +177,12 @@ if (subscriptionForm) {
             }
         });
     }
-});
 
   const frequencyButton = document.querySelectorAll(".frequency-button");
 
   frequencyButton.forEach(button => {
     button.addEventListener("click", () => {
-        frequencyButton.forEach(btn => classList.remove("selected"));
+        frequencyButton.forEach(btn => btn.classList.remove("selected"));
         button.classList.add("selected");
     });
   });
