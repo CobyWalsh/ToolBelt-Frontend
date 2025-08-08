@@ -43,6 +43,50 @@
         </svg> 
         </header>
 
+        <section class="handyman-description" style="padding: 2rem; background-color: #FDF8F1;">
+        <h2>What We Offer</h2>
+      <p>
+        Our handyman services cover everything from small repairs to larger home projects.
+        Whether it’s fixing a leaky faucet, patching drywall, assembling furniture, or tackling 
+        your to-do list, our skilled professionals ensure the job is done right — on time and with care.
+      </p>
+    <ul>
+      <li>Garbage Disposal</li>
+      <li>Mount T.V</li>
+      <li>Clogged or Slow Drains</li>
+      <li>Assemble Furniture</li>
+      <li>Fix Squeaky/Crooked Doors</li>
+      <li>New Fauset & Shower Head</li>
+      <li>Leak Under Sink</li>
+      <li>Curtain Rods & Blinds</li>
+      <li>Light or Fan Fixtures</li>
+      <li>And Many More!</li>
+    </ul>
+  </section>
+
+  <section class="handyman-form" style="padding: 2rem; background-color: #ffffff;">
+  <h2>Request a Tech</h2>
+<form action="/submit-handyman-request" method="POST" class="service-request-form">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="address">Address:</label>
+  <input type="text" id="address" name="address" required>
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="description">Descripe the work you need done:</label>
+  <textarea id="description" name="description" rows="5" required>
+
+    <button type="submit" class="btn">Submit Request</button>
+</form>
+<p id="formMessage" style="display: none;"></p>
+</section>
+
         <footer class="footer">
             <div class="footer-container">
               <div class="footer-brand">

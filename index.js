@@ -39,6 +39,38 @@ app.post('/api/contact', async (req, res) => {
     }
 });
 
+app.post('/send-handyman-email', async (req, res) => {
+    const { name, address, phone, email, description } = req.body;
+
+    const msg = {
+        to: [process.env.TO_EMAIL, 'dexter@mybolohome.com'],
+        from: process.env.FROM_EMAIL,
+        subject: 'New Tech Service Request',
+        text: `
+        Name: ${name}
+        Address: ${address}
+        Phone: ${phone}
+        Email: ${email}
+        Work Needed: ${description}`,
+        html: `
+        <h2>New Tech Service Request</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Address:</strong> ${address}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Work Needed:</strong> ${description}</p>
+        `
+    };
+
+    try {
+        await sgMail.send(msg);
+        res.status(200).send({ message: 'Request Sent Successfully' });
+    } catch (error) {
+        console.error('Error sending message:', error);
+        res.status(500).send({ message: 'Error sending request' });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

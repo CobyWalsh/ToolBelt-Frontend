@@ -140,6 +140,46 @@ if (subscriptionForm) {
    })
   }
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const handymanForm = document.getElementById('handymanForm');
+    const formMessage = document.getElementById('formMessage');
+    
+    if (handymanForm) {
+        handymanForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                address: document.getElementById('address').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                description: document.getElementById('description').value
+            };
+
+            try {
+                const res = await fetch ('/send-handyman-email', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(formData)
+                });
+
+                if (res.ok) {
+                    formMessage.style.display = 'block';
+                    formMessage.style.color = 'green';
+                    formMessage.textContent = 'Thank you! Your request has been sent.';
+                    handymanForm.reset();
+                } else {
+                    throw new Error('Failed to send request');
+                }
+            } catch (err) {
+                formMessage.style.display = 'block';
+                formMessage.style.color = 'red';
+                formMessage.textContent = 'Sorry! Error sending request. Please try again later.';
+            }
+        });
+    }
+});
+
   const frequencyButton = document.querySelectorAll(".frequency-button");
 
   frequencyButton.forEach(button => {
