@@ -141,40 +141,38 @@ if (subscriptionForm) {
   }
 
     const handymanForm = document.getElementById('handymanForm');
-    const formMessage = document.getElementById('formMessage');
+    // const formMessage = document.getElementById('formMessage');
     
     if (handymanForm) {
         handymanForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const formData = {
-                name: document.getElementById('name').value,
-                address: document.getElementById('address').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                description: document.getElementById('description').value
+                name: handymanForm.querySelector("[name='name']").value,
+                address: handymanForm.querySelector("[name='address']").value,
+                phone: handymanForm.querySelector("[name='phone']").value,
+                email: handymanForm.querySelector("[name='email']").value,
+                description: handymanForm.querySelector("[name='description']").value,
             };
 
             try {
-                const res = await fetch ('/send-handyman-email', {
+                const res = await fetch ("https://bolo-backend-1.onrender.com/api/handyman", {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(formData)
                 });
 
-                if (res.ok) {
-                    formMessage.style.display = 'block';
-                    formMessage.style.color = 'green';
-                    formMessage.textContent = 'Thank you! Your request has been sent.';
+                const result = await res.json();
+                if (result.success) {
+                    alert("Your handyman request has been sent successfully!");
                     handymanForm.reset();
                 } else {
-                    throw new Error('Failed to send request');
+                   alert("Sorry, there was a problem sending your handyman request"); 
                 }
             } catch (err) {
-                formMessage.style.display = 'block';
-                formMessage.style.color = 'red';
-                formMessage.textContent = 'Sorry! Error sending request. Please try again later.';
-            }
+                console.error("Error submitting handyman form:", err);
+                alert("Network or server error. Please try again.");
+            }   
         });
     }
 
