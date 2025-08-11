@@ -64,19 +64,34 @@
     </ul>
   </section>
 
-<section class="signup-container">
-  <form id="handymanForm" class="contact-form">
-    <h2>Request a Home Tech</h2>
+  <main class="contact-main">
+    <h1 class="site-title">Get in Touch</h1>
 
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="text" name="address" placeholder="Adresss" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <input type="email" name="email" placeholder="Email Address" required>
-    <textarea name="description" placeholder="Describe Your Project" rows="5" required>
+    <form class="contact-form">
+      <div class="contact-row">
+          <input type="text" placeholder="First Name" name="firstName" required>
+          <input type="text" placeholder="Last Name" name="lastName" required>
+      </div>
+      <div class="contact-row">
+          <input type="email" placeholder="Email" name="email" required>
+          <input type="tel" placeholder="Phone Number" name="phone" required>
+      </div>
+      <div class="contact-row">
+          <input type="text" placeholder="City" name="city" required>
+          <input type="text" placeholder="Address" name="address" required>
+      </div>
+      <textarea name="message" placeholder="Message" rows="5"></textarea>
+      <button class="join-button" type="submit">Submit</button>
+    </form>
 
-      <button type="submit" class="btn-submit">Send Request</button>
-  </form>
-</section>
+    <div class="contact-info">
+      <p><strong>Phone:</strong></p>
+      <p><strong>Dexter Belling:</strong>(509)481-8978</p>
+      <p><strong>Coby Walsh:</strong>(509)389-7222</p>
+      <p><strong>Email:</strong>bolo@mybolohome.com</p>
+      <p><strong>Business Hours:</strong>Mon-Sun, 8am-5pm</p>
+    </div>
+  </main>
 
         <footer class="footer">
             <div class="footer-container">
