@@ -5,6 +5,15 @@ body {
     background-color: #fff;
     color: #333;
     line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  html,body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   /* --- Navbar Styles --- */
@@ -392,7 +401,7 @@ body {
 .footer {
   background-color: #10182F;
   color: #ffffff;
-  margin-top: 2rem;
+  margin-top: 0;
   padding: 4rem 2rem 2rem;
   font-size: 0.95rem;
 } 
@@ -894,26 +903,62 @@ body {
   z-index: 1000;
   color: white;
 }
+
+.about-main {
+  position: relative;
+  background-image: url('../images/header-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4rem 2rem 0 2rem;
+  color: #fff;
+  min-height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.about-main > * {
+  position: relative;
+  z-index: 2;
+}
+
 .about-layout {
 display: flex;
 gap: 3rem;
 align-items: flex-start;
 justify-content: space-between;
-padding: 3rem;
-padding-top: 10rem;
+padding: 10rem 3rem 0 3rem;
 flex-wrap: wrap;
-background-color: #FDF8F1;
+color: #fff;
 }
 
 .about-text {
 flex: 1 1 60%;
+color: #fff;
 }
 
 .about-description {
   font-size: 1.7rem;
   line-height: 1.6;
-  color: #333;
+  color: #fff;
   margin-bottom: 2rem;
+}
+
+.about-description p:last-child, .about-main .founders-photos:last-child {
+  margin-bottom: 0;
 }
 
 .founders-photos {
@@ -929,18 +974,6 @@ flex: 1 1 60%;
   max-width: 320px;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-html,body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-body {
-  min-height: 100vh;
 }
 
 main {
