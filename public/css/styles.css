@@ -5,13 +5,16 @@ body {
     background-color: #fff;
     color: #333;
     line-height: 1.6;
-    min-height: 100vh;
+    min-height: 100svh;
   }
 
   html,body {
     height: 100%;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow-x: hidden;
   }
 
   /* --- Navbar Styles --- */
@@ -979,26 +982,33 @@ main {
 }
 
 body.contact-page {
+  height: auto;
   position: relative;
   background-image: url('../images/header-image.jpg');
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+main.contact-main {
+  padding: 9 0 0 0;
+  min-height: 100svh;
+}
+
 .contact-main {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 10rem 2rem 0;
+  padding: 9rem 1rem 0;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   width: 95%;
   color: #333;
   flex: 1;
+  flex-grow: 1;
+  min-height: auto;
 }
 
 .contact-form {
@@ -1057,8 +1067,15 @@ body.contact-page {
 }
 
 .contact-info p {
-  margin: 0.5rem 0 ;
+  margin: 0.5rem 0;
 }
+
+@media (max-width: 768px) {
+  .contact-main {
+    padding: 9rem 1rem 0; 
+  }
+}
+
 
 @media (max-width: 768px) {
   .contact-row {
