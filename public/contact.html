@@ -13,7 +13,7 @@
             <img src="images/Bolo Home Logo - Real Estate Company (2) (1).png" alt="ToolBelt Logo" class="nav-logo" />
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="subscription.html">Services</a></li>
+                <li><a href="subscription.html">Subscription Services</a></li>
                 <li><a href="handyman.html">Handyman Services</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
@@ -33,30 +33,16 @@
     <main class="contact-main">
       <h1 class="site-title">Get in Touch</h1>
 
-      <form class="contact-form">
-        <div class="contact-row">
-            <input type="text" placeholder="First Name" name="firstName" required>
-            <input type="text" placeholder="Last Name" name="lastName" required>
-        </div>
-        <div class="contact-row">
-            <input type="email" placeholder="Email" name="email" required>
-            <input type="tel" placeholder="Phone Number" name="phone" required>
-        </div>
-        <div class="contact-row">
-            <input type="text" placeholder="City" name="city" required>
-            <input type="text" placeholder="Address" name="address" required>
-        </div>
-        <textarea name="message" placeholder="Message" rows="5"></textarea>
-        <button class="join-button" type="submit">Submit</button>
-      </form>
+      <div id="markate-widget-contact"></div>
+      <script>(function() { function async() {var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+      var u = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.markate.com/public/widget/contact/js'; 
+      var t = Math.random()*10000000000000000;
+      s.src = u + '?id=951b0aea7034de15b9f44642a995ca28:75430:d5deb786&ref=' + encodeURIComponent(window.location.href) + '&t=' + t;
+      var w = document.getElementById('markate-widget-contact'); w.parentNode.insertBefore(s, w);
+      } if (window.attachEvent) { window.attachEvent('onload', async); } else { window.addEventListener('load', async, false); }
+      })();</script>
 
-      <div class="contact-info">
-        <p><strong>Phone:</strong></p>
-        <p><strong>Dexter Belling:</strong>(509)481-8978</p>
-        <p><strong>Coby Walsh:</strong>(509)389-7222</p>
-        <p><strong>Email:</strong>bolo@mybolohome.com</p>
-        <p><strong>Business Hours:</strong>Mon-Sun, 8am-5pm</p>
-      </div>
+
     </main>
 
     <footer class="footer">
@@ -84,6 +70,13 @@
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms of Service</a></li>
               </ul>
+            </div>
+            <div class="footer-column">
+              <p><h4>Phone:</h4></p>
+              <p><strong>Dexter Belling:</strong> (509)481-8978</p>
+              <p><strong>Coby Walsh:</strong> (509)389-7222</p>
+              <p><h4>Email:</h4>bolo@mybolohome.com</p>
+              <p><h4>Business Hours:</h4>Mon-Sun, 8am-5pm</p>
             </div>
           </div>
         </div>

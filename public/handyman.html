@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
+<body class="contact-page">
         <nav class="navbar">
             <div class="nav-left">
                 <img src="images/Bolo Home Logo - Real Estate Company (2) (1).png" alt="ToolBelt Logo" class="nav-logo" />
@@ -34,66 +34,23 @@
           </div>
         </nav>
 
-        <section class="hero-wrapper" style="background-image: url('images/header-image.jpg');">
-          <div class="header-overlay"></div>
+<main class="contact-main">
+  <div class="header-overlay"></div>
+  <h1 class="site-title">Handyman Services</h1>
+  <p class="blip-description"> 
+    From small repairs to ongoing care, Bolo Home is here to be your trusted partner — building lasting relationships through reliable service.            
+  </p>
+  <h1 class="site-title">Request a Home Tech</h1>
 
-        <header class="site-header handyman-header">
-          <div class="header-content">  
-          <h1 class="site-title">Handyman Services</h1>
-            <p class="blip-description"> 
-              From small repairs to ongoing care, Bolo Home is here to be your trusted partner — building lasting relationships through reliable service.            
-            </p>
-          </div>
-        </header>
+<div id="markate-widget-contact"></div>
+<script>(function() { function async() {var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+var u = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.markate.com/public/widget/contact/js'; 
+var t = Math.random()*10000000000000000;
+s.src = u + '?id=951b0aea7034de15b9f44642a995ca28:75430:d5deb786&ref=' + encodeURIComponent(window.location.href) + '&t=' + t;
+var w = document.getElementById('markate-widget-contact'); w.parentNode.insertBefore(s, w);
+} if (window.attachEvent) { window.attachEvent('onload', async); } else { window.addEventListener('load', async, false); }
+})();</script>
 
-<!-- What We Offer -->
-<section class="services-section">
-  <h2 class="section-title">What We Offer</h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <h3>Repairs</h3> 
-      <p>Fixing those small issues before they turn into big ones.</p>
-    </div>
-    <div class="service-card">
-      <h3>Installations</h3>
-      <p>From shelves to lighting, we handle the details so you can enjoy your space.</p>
-    </div>
-    <div class="service-card">
-      <h3>Maintenance</h3>
-      <p>Keeping your home in tip shape with regular care and checkups.</p>
-      </div>
-    </div>
-  </section>
-</section>
-
-  <main class="contact-main">
-    <h1 class="site-title">Request a Home Tech</h1>
-    <p class="form-description">Tell us about your project and we'll get in touch with you soon!</p>
-
-    <form class="contact-form">
-      <div class="contact-row">
-          <input type="text" placeholder="First Name" name="firstName" required>
-          <input type="text" placeholder="Last Name" name="lastName" required>
-      </div>
-      <div class="contact-row">
-          <input type="email" placeholder="Email" name="email" required>
-          <input type="tel" placeholder="Phone Number" name="phone" required>
-      </div>
-      <div class="contact-row">
-          <input type="text" placeholder="City" name="city" required>
-          <input type="text" placeholder="Address" name="address" required>
-      </div>
-      <textarea name="message" placeholder="Describe your project" rows="5" required></textarea>
-      <button class="join-button" type="submit">Send Request</button>
-    </form>
-
-    <div class="contact-info">
-      <p><strong>Phone:</strong></p>
-      <p><strong>Dexter Belling:</strong>(509)481-8978</p>
-      <p><strong>Coby Walsh:</strong>(509)389-7222</p>
-      <p><strong>Email:</strong>bolo@mybolohome.com</p>
-      <p><strong>Business Hours:</strong>Mon-Sun, 8am-5pm</p>
-    </div>
   </main>
 
         <footer class="footer">
@@ -104,6 +61,7 @@
                   Reliable home maintenance, simplified. Bolo Home delivers consistent, professional service so your home stays in top shape — no hassle required.
                 </p>
               </div>
+
               <div class="footer-links">
                 <div class="footer-column">
                   <h4>Company</h4>
@@ -122,6 +80,13 @@
                     <li><a href="#">Terms of Service</a></li>
                   </ul>
                 </div>
+                <div class="footer-column">
+                  <p><h4>Phone:</h4></p>
+                  <p><strong>Dexter Belling:</strong> (509)481-8978</p>
+                  <p><strong>Coby Walsh:</strong> (509)389-7222</p>
+                  <p><h4>Email:</h4>bolo@mybolohome.com</p>
+                  <p><h4>Business Hours:</h4>Mon-Sun, 8am-5pm</p>
+                </div>
               </div>
             </div>
             <div class="footer-bottom">
@@ -129,6 +94,7 @@
             </div>
           </footer>
         
-          <script type="module" src="js/main.js"></script> 
+          <script type="module" src="js/main.js"></script>
+          <script src="js/handyman.js"></script> 
 </body>
 </html>
