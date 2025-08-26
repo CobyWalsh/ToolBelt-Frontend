@@ -998,6 +998,7 @@ body.contact-page {
   display: flex;
   flex-direction: column;
   color: black;
+  background-attachment: fixed;
 }
 
 main.contact-main {
